@@ -51,11 +51,11 @@ const QuoteDisplay = () => {
   }
 
   return (
-    <blockquote className="max-w-2xl mx-auto">
-      <p className="font-serif text-lg md:text-xl italic text-slate-300 mb-2">
+    <blockquote className="max-w-2xl mx-auto bg-gradient-to-r from-slate-800/60 to-slate-700/60 backdrop-blur-sm border-l-4 border-indigo-500 pl-6 py-4 mt-4 mb-8 rounded-r-lg animate-fade-in">
+      <p className="font-serif text-lg md:text-xl italic text-slate-200 mb-2">
         "{currentQuote?.text}"
       </p>
-      <footer className="text-slate-400">— {currentQuote?.author}</footer>
+      <footer className="text-indigo-300">— {currentQuote?.author}</footer>
     </blockquote>
   );
 };

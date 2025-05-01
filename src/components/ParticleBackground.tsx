@@ -16,8 +16,9 @@ const ParticleBackground = () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
     
-    const particleCount = isMobile ? 30 : 70;
+    const particleCount = isMobile ? 40 : 100;
     const particles: Particle[] = [];
+    const gradientColors = ['rgba(99, 102, 241, 0.4)', 'rgba(168, 85, 247, 0.4)', 'rgba(236, 72, 153, 0.4)'];
     
     class Particle {
       x: number;
@@ -25,13 +26,15 @@ const ParticleBackground = () => {
       size: number;
       speedX: number;
       speedY: number;
+      color: string;
       
       constructor() {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 1 + 0.5;
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.speedY = Math.random() * 0.5 - 0.25;
+        this.size = Math.random() * 1.5 + 0.5;
+        this.speedX = Math.random() * 0.6 - 0.3;
+        this.speedY = Math.random() * 0.6 - 0.3;
+        this.color = gradientColors[Math.floor(Math.random() * gradientColors.length)];
       }
       
       update() {
@@ -47,7 +50,7 @@ const ParticleBackground = () => {
       
       draw() {
         if (!ctx) return;
-        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.fillStyle = this.color;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
         ctx.closePath();
@@ -56,7 +59,7 @@ const ParticleBackground = () => {
     }
     
     const connectParticles = () => {
-      const maxDistance = isMobile ? 100 : 170;
+      const maxDistance = isMobile ? 120 : 200;
       
       for (let i = 0; i < particles.length; i++) {
         for (let j = i; j < particles.length; j++) {
@@ -65,9 +68,20 @@ const ParticleBackground = () => {
           const distance = Math.sqrt(dx * dx + dy * dy);
           
           if (distance < maxDistance) {
+            // Create gradient lines for more visual appeal
+            const opacity = 0.15 * (1 - distance / maxDistance);
+            const gradient = ctx.createLinearGradient(
+              particles[i].x,
+              particles[i].y,
+              particles[j].x,
+              particles[j].y
+            );
+            gradient.addColorStop(0, particles[i].color.replace(/[^,]+\)$/, `${opacity})`));
+            gradient.addColorStop(1, particles[j].color.replace(/[^,]+\)$/, `${opacity})`));
+            
             ctx.beginPath();
-            ctx.strokeStyle = `rgba(255, 255, 255, ${0.1 * (1 - distance / maxDistance)})`;
-            ctx.lineWidth = 0.5;
+            ctx.strokeStyle = gradient;
+            ctx.lineWidth = 0.6;
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
             ctx.stroke();
@@ -111,7 +125,7 @@ const ParticleBackground = () => {
   return (
     <canvas 
       ref={canvasRef} 
-      className="fixed top-0 left-0 w-full h-full opacity-30 z-0"
+      className="fixed top-0 left-0 w-full h-full opacity-40 z-0"
     />
   );
 };
