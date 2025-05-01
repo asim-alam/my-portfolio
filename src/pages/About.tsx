@@ -11,18 +11,19 @@ const About = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-900 text-slate-100">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100">
       <Navbar />
       <ParticleBackground />
       
-      <main className="flex-grow container mx-auto px-4 md:px-6 py-24 mt-8">
+      <main className="flex-grow container mx-auto px-4 md:px-6 py-12 mt-8 z-10 relative">
         <div className="max-w-4xl mx-auto">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-12 text-center">About Me</h1>
+          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-3 text-center bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 text-transparent bg-clip-text animate-fade-in">About Me</h1>
+          <div className="h-1 w-24 mx-auto bg-gradient-to-r from-indigo-500 to-purple-500 mb-12 rounded-full"></div>
           
           <div className="space-y-12">
-            <section>
-              <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6">My Journey</h2>
-              <Card className="bg-slate-800/70 backdrop-blur-sm border-slate-700">
+            <section className="animate-fade-in">
+              <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">My Journey</h2>
+              <Card className="bg-slate-800/40 backdrop-blur-sm border-white/5 shadow-xl overflow-hidden">
                 <CardContent className="pt-6">
                   <p className="text-slate-300 mb-4 leading-relaxed">
                     My academic journey began at the University of Dhaka, where I'm pursuing a degree in Software Engineering. From an early age, I've been fascinated by the intersection of technology, philosophy, and scientific exploration.
@@ -37,30 +38,30 @@ const About = () => {
               </Card>
             </section>
             
-            <section>
-              <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6">Core Values</h2>
+            <section className="animate-fade-in" style={{ animationDelay: '150ms' }}>
+              <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">Core Values</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <Card className="bg-slate-800/70 backdrop-blur-sm border-slate-700 hover:shadow-lg transition-shadow">
+                <Card className="bg-slate-800/40 backdrop-blur-sm border-white/5 hover:shadow-lg transition-shadow hover:-translate-y-1 duration-300">
                   <CardContent className="p-6">
-                    <h3 className="font-serif text-xl font-semibold mb-3">Curiosity</h3>
+                    <h3 className="font-serif text-xl font-semibold mb-3 text-white">Curiosity</h3>
                     <p className="text-slate-300">
                       I embrace the unknown with enthusiasm, constantly asking questions and seeking new perspectives. Curiosity is the engine that drives innovation and discovery.
                     </p>
                   </CardContent>
                 </Card>
                 
-                <Card className="bg-slate-800/70 backdrop-blur-sm border-slate-700 hover:shadow-lg transition-shadow">
+                <Card className="bg-slate-800/40 backdrop-blur-sm border-white/5 hover:shadow-lg transition-shadow hover:-translate-y-1 duration-300">
                   <CardContent className="p-6">
-                    <h3 className="font-serif text-xl font-semibold mb-3">Discipline</h3>
+                    <h3 className="font-serif text-xl font-semibold mb-3 text-white">Discipline</h3>
                     <p className="text-slate-300">
                       I believe in consistent, deliberate practice and structured approaches to learning. Great achievements require dedication and methodical effort.
                     </p>
                   </CardContent>
                 </Card>
                 
-                <Card className="bg-slate-800/70 backdrop-blur-sm border-slate-700 hover:shadow-lg transition-shadow">
+                <Card className="bg-slate-800/40 backdrop-blur-sm border-white/5 hover:shadow-lg transition-shadow hover:-translate-y-1 duration-300">
                   <CardContent className="p-6">
-                    <h3 className="font-serif text-xl font-semibold mb-3">Self-Development</h3>
+                    <h3 className="font-serif text-xl font-semibold mb-3 text-white">Self-Development</h3>
                     <p className="text-slate-300">
                       I am committed to continuous improvement—intellectually, technically, and personally. Each day presents an opportunity to become more capable and enlightened.
                     </p>
@@ -69,9 +70,9 @@ const About = () => {
               </div>
             </section>
             
-            <section>
-              <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6">Vision</h2>
-              <Card className="bg-slate-800/70 backdrop-blur-sm border-slate-700">
+            <section className="animate-fade-in" style={{ animationDelay: '300ms' }}>
+              <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">Vision</h2>
+              <Card className="bg-slate-800/40 backdrop-blur-sm border-white/5 shadow-xl overflow-hidden">
                 <CardContent className="pt-6">
                   <p className="text-slate-300 mb-4 leading-relaxed">
                     I aspire to contribute to the advancement of AI and robotics research, with a focus on creating technologies that serve humanity and expand our understanding of intelligence and consciousness.

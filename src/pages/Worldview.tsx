@@ -11,22 +11,23 @@ const Worldview = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-900 text-slate-100">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100">
       <Navbar />
       <ParticleBackground />
       
-      <main className="flex-grow container mx-auto px-4 md:px-6 py-24 mt-8">
+      <main className="flex-grow container mx-auto px-4 md:px-6 py-12 mt-8 z-10 relative">
         <div className="max-w-4xl mx-auto">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-center">My Worldview</h1>
-          <p className="text-slate-300 text-center mb-12 max-w-2xl mx-auto">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-3 text-center bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 text-transparent bg-clip-text animate-fade-in">My Worldview</h1>
+          <div className="h-1 w-24 mx-auto bg-gradient-to-r from-indigo-500 to-purple-500 mb-6 rounded-full"></div>
+          <p className="text-slate-300 text-center mb-12 max-w-2xl mx-auto animate-fade-in">
             My perspectives on science, knowledge, human nature, and the pursuit of meaning.
           </p>
           
           <div className="space-y-10">
-            <section>
-              <Card className="bg-slate-800/70 backdrop-blur-sm border-slate-700">
+            <section className="animate-fade-in">
+              <Card className="bg-slate-800/40 backdrop-blur-sm border-white/5 shadow-xl overflow-hidden hover:-translate-y-1 transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="font-serif text-2xl">On Science and Knowledge</CardTitle>
+                  <CardTitle className="font-serif text-2xl bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">On Science and Knowledge</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4 text-slate-300 leading-relaxed">
@@ -51,10 +52,10 @@ const Worldview = () => {
               </Card>
             </section>
             
-            <section>
-              <Card className="bg-slate-800/70 backdrop-blur-sm border-slate-700">
+            <section className="animate-fade-in" style={{ animationDelay: '150ms' }}>
+              <Card className="bg-slate-800/40 backdrop-blur-sm border-white/5 shadow-xl overflow-hidden hover:-translate-y-1 transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="font-serif text-2xl">On Technology and Progress</CardTitle>
+                  <CardTitle className="font-serif text-2xl bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">On Technology and Progress</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4 text-slate-300 leading-relaxed">
@@ -78,10 +79,10 @@ const Worldview = () => {
               </Card>
             </section>
             
-            <section>
-              <Card className="bg-slate-800/70 backdrop-blur-sm border-slate-700">
+            <section className="animate-fade-in" style={{ animationDelay: '300ms' }}>
+              <Card className="bg-slate-800/40 backdrop-blur-sm border-white/5 shadow-xl overflow-hidden hover:-translate-y-1 transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="font-serif text-2xl">On Human Nature and Potential</CardTitle>
+                  <CardTitle className="font-serif text-2xl bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">On Human Nature and Potential</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4 text-slate-300 leading-relaxed">
@@ -105,10 +106,10 @@ const Worldview = () => {
               </Card>
             </section>
             
-            <section>
-              <Card className="bg-slate-800/70 backdrop-blur-sm border-slate-700">
+            <section className="animate-fade-in" style={{ animationDelay: '450ms' }}>
+              <Card className="bg-slate-800/40 backdrop-blur-sm border-white/5 shadow-xl overflow-hidden hover:-translate-y-1 transition-all duration-300">
                 <CardHeader>
-                  <CardTitle className="font-serif text-2xl">On Personal Growth and Meaning</CardTitle>
+                  <CardTitle className="font-serif text-2xl bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">On Personal Growth and Meaning</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <div className="space-y-4 text-slate-300 leading-relaxed">

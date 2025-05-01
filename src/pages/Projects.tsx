@@ -61,21 +61,22 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-900 text-slate-100">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100">
       <Navbar />
       <ParticleBackground />
       
-      <main className="flex-grow container mx-auto px-4 md:px-6 py-24 mt-8">
+      <main className="flex-grow container mx-auto px-4 md:px-6 py-12 mt-8 z-10 relative">
         <div className="max-w-5xl mx-auto">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-center">Projects</h1>
-          <p className="text-slate-300 text-center mb-12 max-w-2xl mx-auto">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-3 bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 text-transparent bg-clip-text text-center animate-fade-in">Projects</h1>
+          <div className="h-1 w-24 bg-gradient-to-r from-indigo-500 to-purple-500 mb-8 rounded-full mx-auto"></div>
+          <p className="text-slate-300 text-center mb-12 max-w-2xl mx-auto animate-fade-in">
             A collection of my technical and interdisciplinary work in AI, robotics, 
             and computer science, showcasing my approach to solving complex problems.
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {projects.map((project) => (
-              <Card key={project.id} className="bg-slate-800/70 backdrop-blur-sm border-slate-700 overflow-hidden hover:shadow-lg transition-shadow">
+            {projects.map((project, index) => (
+              <Card key={project.id} className="bg-slate-800/40 backdrop-blur-sm border-white/5 overflow-hidden hover:shadow-lg transition-shadow hover:-translate-y-1 duration-300 animate-fade-in" style={{ animationDelay: `${index * 150}ms` }}>
                 <div className="h-48 overflow-hidden">
                   <img 
                     src={project.image} 
@@ -84,7 +85,7 @@ const Projects = () => {
                   />
                 </div>
                 <CardHeader>
-                  <CardTitle className="font-serif">{project.title}</CardTitle>
+                  <CardTitle className="font-serif text-white">{project.title}</CardTitle>
                   <CardDescription className="text-slate-400">
                     <div className="flex flex-wrap gap-2 mt-2">
                       {project.tags.map((tag) => (
@@ -99,14 +100,14 @@ const Projects = () => {
                   <p className="text-slate-300">{project.description}</p>
                 </CardContent>
                 <CardFooter className="flex gap-3">
-                  <Button asChild size="sm" variant="outline">
+                  <Button asChild size="sm" variant="outline" className="bg-slate-700/50 border-white/10 hover:bg-slate-600/50 hover:text-white">
                     <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                       <Github className="mr-1 h-4 w-4" />
                       Code
                     </a>
                   </Button>
                   {project.liveUrl && (
-                    <Button asChild size="sm">
+                    <Button asChild size="sm" className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 border-none">
                       <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                         <ExternalLink className="mr-1 h-4 w-4" />
                         Demo

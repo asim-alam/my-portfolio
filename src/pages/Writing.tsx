@@ -65,23 +65,24 @@ const Writing = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-900 text-slate-100">
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-100">
       <Navbar />
       <ParticleBackground />
       
-      <main className="flex-grow container mx-auto px-4 md:px-6 py-24 mt-8">
+      <main className="flex-grow container mx-auto px-4 md:px-6 py-12 mt-8 z-10 relative">
         <div className="max-w-4xl mx-auto">
-          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-6 text-center">Writing</h1>
-          <p className="text-slate-300 text-center mb-12 max-w-2xl mx-auto">
+          <h1 className="font-serif text-4xl md:text-5xl font-bold mb-3 text-center bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 text-transparent bg-clip-text animate-fade-in">Writing</h1>
+          <div className="h-1 w-24 mx-auto bg-gradient-to-r from-indigo-500 to-purple-500 mb-6 rounded-full"></div>
+          <p className="text-slate-300 text-center mb-12 max-w-2xl mx-auto animate-fade-in">
             A collection of my thoughts on science, philosophy, technology, and the 
             intersection of these fascinating disciplines.
           </p>
           
-          <section>
-            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6">Articles & Essays</h2>
+          <section className="animate-fade-in" style={{ animationDelay: '150ms' }}>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">Articles & Essays</h2>
             <div className="space-y-6">
-              {articles.map((article) => (
-                <Card key={article.id} className="bg-slate-800/70 backdrop-blur-sm border-slate-700 hover:shadow-lg transition-shadow">
+              {articles.map((article, index) => (
+                <Card key={article.id} className="bg-slate-800/40 backdrop-blur-sm border-white/5 hover:shadow-lg transition-shadow hover:-translate-y-1 duration-300" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
                   <CardHeader>
                     <div className="flex flex-wrap gap-2 mb-2">
                       {article.categories.map((category) => (
@@ -90,7 +91,7 @@ const Writing = () => {
                         </Badge>
                       ))}
                     </div>
-                    <CardTitle className="font-serif text-xl">{article.title}</CardTitle>
+                    <CardTitle className="font-serif text-xl text-white">{article.title}</CardTitle>
                     <div className="text-sm text-slate-400 flex gap-3">
                       <span>{article.date}</span>
                       <span>•</span>
@@ -101,10 +102,10 @@ const Writing = () => {
                     <p className="text-slate-300">{article.excerpt}</p>
                   </CardContent>
                   <CardFooter>
-                    <Button asChild variant="ghost" className="pl-0 hover:pl-2 transition-all">
+                    <Button asChild variant="ghost" className="pl-0 hover:pl-2 transition-all text-indigo-300 hover:text-indigo-200 hover:bg-slate-700/50">
                       <a href="#">
                         Read Full Article
-                        <ArrowRight className="ml-1 h-4 w-4" />
+                        <ArrowRight className="ml-1 h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </a>
                     </Button>
                   </CardFooter>
@@ -113,15 +114,15 @@ const Writing = () => {
             </div>
           </section>
           
-          <section className="mt-16">
-            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6">Upcoming Books</h2>
+          <section className="mt-16 animate-fade-in" style={{ animationDelay: '350ms' }}>
+            <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">Upcoming Books</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {upcomingBooks.map((book) => (
+              {upcomingBooks.map((book, index) => (
                 <HoverCard key={book.id}>
                   <HoverCardTrigger asChild>
-                    <Card className="bg-slate-800/70 backdrop-blur-sm border-slate-700 hover:shadow-lg transition-shadow cursor-pointer">
+                    <Card className="bg-slate-800/40 backdrop-blur-sm border-white/5 hover:shadow-lg transition-shadow cursor-pointer hover:-translate-y-1 duration-300" style={{ animationDelay: `${(index + 5) * 100}ms` }}>
                       <CardHeader>
-                        <CardTitle className="font-serif text-xl">{book.title}</CardTitle>
+                        <CardTitle className="font-serif text-xl text-white">{book.title}</CardTitle>
                         <div className="text-sm text-slate-400">Expected: {book.expectedRelease}</div>
                       </CardHeader>
                       <CardContent>
