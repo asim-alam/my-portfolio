@@ -1,6 +1,6 @@
 
 import { useEffect } from "react";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
@@ -73,10 +73,28 @@ const Writing = () => {
         <div className="max-w-4xl mx-auto">
           <h1 className="font-serif text-4xl md:text-5xl font-bold mb-3 text-center bg-gradient-to-r from-purple-400 via-pink-400 to-indigo-400 text-transparent bg-clip-text animate-fade-in">Writing</h1>
           <div className="h-1 w-24 mx-auto bg-gradient-to-r from-indigo-500 to-purple-500 mb-6 rounded-full"></div>
-          <p className="text-slate-300 text-center mb-12 max-w-2xl mx-auto animate-fade-in">
+          <p className="text-slate-300 text-center mb-8 max-w-2xl mx-auto animate-fade-in">
             A collection of my thoughts on science, philosophy, technology, and the 
             intersection of these fascinating disciplines.
           </p>
+          
+          {/* Blog Link Card */}
+          <Card className="mb-12 bg-gradient-to-r from-slate-800/90 to-slate-800/50 border-white/5 overflow-hidden backdrop-blur-sm hover:shadow-lg transition-shadow animate-fade-in">
+            <CardHeader className="pb-2">
+              <CardTitle className="font-serif text-2xl text-white">Cosmic Bard Chronicles</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-slate-300">Explore my dedicated blog where I share more in-depth thoughts, essays, and musings on various topics from technology to philosophy.</p>
+            </CardContent>
+            <CardFooter>
+              <Button asChild className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 border-none">
+                <a href="https://preview--cosmic-bard-chronicles-43.lovable.app/" target="_blank" rel="noopener noreferrer">
+                  <ExternalLink className="mr-2 h-4 w-4" />
+                  Visit Blog
+                </a>
+              </Button>
+            </CardFooter>
+          </Card>
           
           <section className="animate-fade-in" style={{ animationDelay: '150ms' }}>
             <h2 className="font-serif text-2xl md:text-3xl font-bold mb-6 bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">Articles & Essays</h2>
