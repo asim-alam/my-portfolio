@@ -1,14 +1,13 @@
-
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { ArrowRight, Github, Linkedin, Mail, Twitter, Code, BookOpen, Rocket } from "lucide-react";
+import { ArrowRight, Github, Linkedin, Mail, Twitter, Code, BookOpen, Rocket, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navbar from "@/components/Navbar";
 import QuoteDisplay from "@/components/QuoteDisplay";
 import ParticleBackground from "@/components/ParticleBackground";
 import Footer from "@/components/Footer";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardFooter, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
 const FloatingBadge = ({ text, className }: { text: string; className: string }) => (
@@ -18,6 +17,22 @@ const FloatingBadge = ({ text, className }: { text: string; className: string })
     </Badge>
   </div>
 );
+
+// Sample blog posts for preview
+const recentBlogPosts = [
+  {
+    title: "The Ethics of AI Development",
+    excerpt: "Exploring the moral implications of creating increasingly advanced artificial intelligence systems.",
+    date: "April 28, 2025",
+    imageUrl: "/lovable-uploads/b7d8144e-00b5-4b18-83d9-64e5dafa01d8.png"
+  },
+  {
+    title: "Quantum Computing: A New Era",
+    excerpt: "Understanding the fundamentals of quantum computing and its potential to revolutionize technology.",
+    date: "April 22, 2025",
+    imageUrl: "/placeholder.svg"
+  }
+];
 
 const Index = () => {
   const [isImageLoaded, setIsImageLoaded] = useState(false);
@@ -99,6 +114,49 @@ const Index = () => {
                 <div className="text-center">
                   <Button asChild variant="ghost" className="text-indigo-300 hover:text-indigo-200 hover:bg-slate-700/50">
                     <Link to="/about">Read More About My Journey <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                  </Button>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </section>
+
+        {/* Blog Preview Section */}
+        <section className="py-12 relative z-10">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-2 text-center bg-gradient-to-r from-indigo-400 to-purple-400 text-transparent bg-clip-text">Cosmic Bard Chronicles</h2>
+            <div className="h-1 w-16 mx-auto bg-gradient-to-r from-indigo-500 to-purple-500 mb-6 rounded-full"></div>
+            
+            <Card className="bg-slate-800/40 backdrop-blur-lg border-white/5 shadow-xl overflow-hidden mb-8">
+              <CardContent className="p-6 md:p-8">
+                <p className="text-slate-300 mb-6 leading-relaxed text-center">
+                  Explore my blog where I share thoughts on philosophy, science, and technology.
+                </p>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  {recentBlogPosts.map((post, index) => (
+                    <Card key={index} className="bg-slate-800/60 border-white/5 hover:border-white/10 transition-all hover:-translate-y-1">
+                      <div className="relative h-40 overflow-hidden rounded-t-lg">
+                        <img 
+                          src={post.imageUrl} 
+                          alt={post.title} 
+                          className="object-cover w-full h-full" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                        <div className="absolute bottom-2 left-4 text-xs text-slate-300">{post.date}</div>
+                      </div>
+                      <CardContent className="p-4">
+                        <h3 className="font-serif font-bold text-lg mb-2">{post.title}</h3>
+                        <p className="text-slate-300 text-sm line-clamp-2">{post.excerpt}</p>
+                      </CardContent>
+                    </Card>
+                  ))}
+                </div>
+                <div className="text-center">
+                  <Button asChild className="bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 border-none">
+                    <a href="https://preview--cosmic-bard-chronicles-43.lovable.app/" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      Visit My Blog
+                    </a>
                   </Button>
                 </div>
               </CardContent>
