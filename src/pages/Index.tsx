@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, Github, Linkedin, Mail, Twitter, Code, BookOpen, Rocket, ExternalLink } from "lucide-react";
@@ -18,19 +19,21 @@ const FloatingBadge = ({ text, className }: { text: string; className: string })
   </div>
 );
 
-// Sample blog posts for preview
+// Updated blog posts with specific links
 const recentBlogPosts = [
   {
     title: "The Ethics of AI Development",
     excerpt: "Exploring the moral implications of creating increasingly advanced artificial intelligence systems.",
     date: "April 28, 2025",
-    imageUrl: "/lovable-uploads/b7d8144e-00b5-4b18-83d9-64e5dafa01d8.png"
+    imageUrl: "/lovable-uploads/d94fe6f9-60c1-4766-b3aa-cf3454ec7bb4.png",
+    link: "https://preview--cosmic-bard-chronicles-43.lovable.app/blog/the-ethics-of-ai-development-54122"
   },
   {
     title: "Quantum Computing: A New Era",
     excerpt: "Understanding the fundamentals of quantum computing and its potential to revolutionize technology.",
     date: "April 22, 2025",
-    imageUrl: "/placeholder.svg"
+    imageUrl: "/lovable-uploads/c8663550-5d9b-4799-8fe9-c2d8c0f0e3af.png",
+    link: "https://preview--cosmic-bard-chronicles-43.lovable.app/blog/quantum-computing-a-new-era-07070"
   }
 ];
 
@@ -134,20 +137,25 @@ const Index = () => {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   {recentBlogPosts.map((post, index) => (
-                    <Card key={index} className="bg-slate-800/60 border-white/5 hover:border-white/10 transition-all hover:-translate-y-1">
-                      <div className="relative h-40 overflow-hidden rounded-t-lg">
-                        <img 
-                          src={post.imageUrl} 
-                          alt={post.title} 
-                          className="object-cover w-full h-full" 
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
-                        <div className="absolute bottom-2 left-4 text-xs text-slate-300">{post.date}</div>
-                      </div>
-                      <CardContent className="p-4">
-                        <h3 className="font-serif font-bold text-lg mb-2">{post.title}</h3>
-                        <p className="text-slate-300 text-sm line-clamp-2">{post.excerpt}</p>
-                      </CardContent>
+                    <Card key={index} className="bg-slate-800/60 border-white/5 hover:border-white/10 transition-all hover:-translate-y-1 group">
+                      <a href={post.link} target="_blank" rel="noopener noreferrer" className="block">
+                        <div className="relative h-48 overflow-hidden rounded-t-lg">
+                          <img 
+                            src={post.imageUrl} 
+                            alt={post.title} 
+                            className="object-cover w-full h-full transition-transform group-hover:scale-105" 
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent"></div>
+                          <div className="absolute bottom-2 left-4 text-xs text-slate-300">{post.date}</div>
+                          <div className="absolute top-2 right-2 bg-slate-800/70 p-1 rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                            <ExternalLink className="h-4 w-4 text-slate-300" />
+                          </div>
+                        </div>
+                        <CardContent className="p-4">
+                          <h3 className="font-serif font-bold text-lg mb-2 group-hover:text-indigo-300 transition-colors">{post.title}</h3>
+                          <p className="text-slate-300 text-sm line-clamp-2">{post.excerpt}</p>
+                        </CardContent>
+                      </a>
                     </Card>
                   ))}
                 </div>
