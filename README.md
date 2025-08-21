@@ -1,73 +1,54 @@
-# Welcome to your Lovable project
 
-## Project info
 
+# 🚀 Asim Alam Chowdhury – Portfolio
 **URL**: https://lovable.dev/projects/ca5aace0-b133-47f7-87ba-665dda5e9924
 
-## How can I edit this code?
+Welcome to my portfolio repository!  
+Here I showcase my projects, skills, and experiments in **Artificial Intelligence, Robotics, and Software Development**.  
 
-There are several ways of editing your application.
+---
 
-**Use Lovable**
+## 👨‍💻 About Me
+- 🎓 Student with a passion for **AI, Robotics, and Automation**  
+- 🤖 Interested in **robotics software engineering** and **autonomous systems**  
+- 💡 I love solving problems through **algorithms, data, and intelligent systems**  
+- 📚 Always learning – from classical **machine learning** to **modern deep learning** and **robotics control**  
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ca5aace0-b133-47f7-87ba-665dda5e9924) and start prompting.
+---
 
-Changes made via Lovable will be committed automatically to this repo.
+## 🛠️ Tech Stack
+- **Languages:** Python, C++, Java, JavaScript  
+- **AI/ML:** PyTorch, TensorFlow, scikit-learn  
+- **Robotics:** ROS, OpenCV, Arduino, Raspberry Pi  
+- **Web/Tools:** React, Node.js, Git, Docker  
 
-**Use your preferred IDE**
+---
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## 📂 Projects
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+### 🤖 Robotics & AI
+- **Autonomous Car (DIY Project)** – Sensor fusion with ultrasonic & mmWave radar  
+- **Object Detection** – Real-time detection using YOLOv8 + OpenCV  
+- **Path Planning Simulation** – Implemented A*, Dijkstra, and RRT for robot navigation  
 
-Follow these steps:
+### 📊 Data & ML
+- **Prediction Models** – Built ML models for time-series forecasting  
+- **Neural Networks Playground** – Custom-built neural nets from scratch in Python  
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+### 🌐 Web & Software
+- **Exam Marathon App** – Focus-mode timer & quiz web app in React  
+- **Portfolio Website** – Built with GitHub Pages & React  
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+## 📫 Connect With Me
+- 🌍 GitHub: [asim-alam](https://github.com/asim-alam)  
+- 💼 LinkedIn: [Asim ALam](www.linkedin.com/in/asim-alam-017788303)  
+- ✉️ Email: [asim-alam](asimalam0032@gmail.com)  
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+---
 
-**Edit a file directly in GitHub**
+⭐️ *If you like my work, feel free to star this repo and connect with me!*  
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
 
-**Use GitHub Codespaces**
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/ca5aace0-b133-47f7-87ba-665dda5e9924) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
