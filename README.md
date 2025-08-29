@@ -1,7 +1,7 @@
 
 
 # 🚀 Asim Alam Chowdhury – Portfolio
-**URL**: https://lovable.dev/projects/ca5aace0-b133-47f7-87ba-665dda5e9924
+**URL**: [https://lovable.dev/projects/ca5aace0-b133-47f7-87ba-665dda5e9924](https://simple-echo-spark.lovable.app/)
 
 Welcome to my portfolio repository!  
 Here I showcase my projects, skills, and experiments in **Artificial Intelligence, Robotics, and Software Development**.  
